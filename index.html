@@ -191,12 +191,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            标签
+            关于
           </a>
         </li>
       
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="//toffeeBlock.me/2018/01/26/hello-world/">
+    <link itemprop="mainEntityOfPage" href="//toffeeBlock.me/2016/06/21/面向对象编程第七篇/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="奶糖的博客">
@@ -262,7 +262,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/26/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2016/06/21/面向对象编程第七篇/" itemprop="url">面向对象编程重点回顾</a></h1>
         
 
         <div class="post-meta">
@@ -274,8 +274,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-26T11:23:19+08:00">
-                2018-01-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-21T17:19:53+08:00">
+                2016-06-21
               </time>
             
 
@@ -306,7 +306,630 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  78
+                  1,865
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>在函数内部直接或者间接的调用自己就是递归</p>
+<h3 id="递归的要素"><a href="#递归的要素" class="headerlink" title="递归的要素"></a>递归的要素</h3><ol>
+<li>自己调用自己</li>
+<li>要有结束条件</li>
+</ol>
+<h3 id="化归思想"><a href="#化归思想" class="headerlink" title="化归思想"></a>化归思想</h3><p>化繁为简，化难为易的过程，化是转化，归是归结。</p>
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习:"></a>练习:</h3><ul>
+<li>求前n项和</li>
+<li>求n!</li>
+<li>求n的m次方（求幂）</li>
+<li>斐波那契数列</li>
+</ul>
+<h3 id="递归获取后代元素"><a href="#递归获取后代元素" class="headerlink" title="递归获取后代元素"></a>递归获取后代元素</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getChildren</span>(<span class="params">ele</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = [];</span><br><span class="line">    <span class="keyword">var</span> children = ele.children;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; children.length; i++)&#123;</span><br><span class="line">        <span class="keyword">var</span> child = children[i];</span><br><span class="line">        result.push(child);</span><br><span class="line">        <span class="keyword">var</span> temp = getChildren(child);</span><br><span class="line">        result = result.concat(temp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><h3 id="什么是作用域？"><a href="#什么是作用域？" class="headerlink" title="什么是作用域？"></a>什么是作用域？</h3><p>变量的作用范围就是作用域</p>
+<h3 id="什么是词法作用域？（词法作用域又叫静态作用域）"><a href="#什么是词法作用域？（词法作用域又叫静态作用域）" class="headerlink" title="什么是词法作用域？（词法作用域又叫静态作用域）"></a>什么是词法作用域？（词法作用域又叫静态作用域）</h3><p>代码在写好的时候，根据代码的书写结构，就可以确定变量的作用范围，这种作用域，就是词法作用域</p>
+<h3 id="什么是块级作用域？"><a href="#什么是块级作用域？" class="headerlink" title="什么是块级作用域？"></a>什么是块级作用域？</h3><p>使用代码块限定的作用域就是块级作用域，js中没有块级作用域</p>
+<h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><p>函数可以创建作用域，函数中又可以声明函数，这样就形成了作用域套作用域的连式结构，称作作用域链</p>
+<h3 id="变量的搜索原则"><a href="#变量的搜索原则" class="headerlink" title="变量的搜索原则"></a>变量的搜索原则</h3><ol>
+<li>现在使用变量的作用域中进行查找，如果找到了就直接使用</li>
+<li>如果没有找到，就去上级作用域链中进行查找，如果找到了就直接使用</li>
+<li>如果没有找到，就沿着作用域链一直向上查找，直到找到全局作用域</li>
+</ol>
+<h3 id="JS代码执行过程"><a href="#JS代码执行过程" class="headerlink" title="JS代码执行过程"></a>JS代码执行过程</h3><ol>
+<li>预解析</li>
+<li>执行</li>
+</ol>
+<h3 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h3><p>在js代码预解析的阶段，会将所有的变量声明以及函数声明提升到其所在的作用域的最顶上，这就是变量提升（Hoisting）</p>
+<h3 id="变量提升的特殊情况"><a href="#变量提升的特殊情况" class="headerlink" title="变量提升的特殊情况"></a>变量提升的特殊情况</h3><ol>
+<li>函数同名：都提升，后面的会覆盖前面的</li>
+<li>函数与变量同名： 只提升函数，忽略变量声明</li>
+<li>变量提升分作用域</li>
+<li>变量提升分段（script标签）</li>
+<li>条件式函数声明： 会被当做函数表达式处理，只提升函数名称，函数体不提升</li>
+<li>形参的赋值是在变量提升过程之前</li>
+</ol>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="闭包的概念"><a href="#闭包的概念" class="headerlink" title="闭包的概念"></a>闭包的概念</h3><p>可以访问独立数据的函数！</p>
+<h3 id="闭包要解决的问题"><a href="#闭包要解决的问题" class="headerlink" title="闭包要解决的问题"></a>闭包要解决的问题</h3><p>在函数外部无法访问函数内部声明的变量</p>
+<h3 id="闭包的基本模型"><a href="#闭包的基本模型" class="headerlink" title="闭包的基本模型"></a>闭包的基本模型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> data = <span class="string">""</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> inner;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="闭包的原理"><a href="#闭包的原理" class="headerlink" title="闭包的原理"></a>闭包的原理</h3><p>作用域，变量的访问规则，上级作用域中无法直接访问下级作用域中的变量，但是下级作用域可以直接访问上级作用域中变量</p>
+<h3 id="闭包的用途"><a href="#闭包的用途" class="headerlink" title="闭包的用途"></a>闭包的用途</h3><ol>
+<li>保护变量，增加对于变量赋值的时候的校验逻辑</li>
+<li>给函数新增一个私有的变量</li>
+</ol>
+<h3 id="for循环注册点击事件以及for循环setTimeout的问题"><a href="#for循环注册点击事件以及for循环setTimeout的问题" class="headerlink" title="for循环注册点击事件以及for循环setTimeout的问题"></a>for循环注册点击事件以及for循环setTimeout的问题</h3><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>将数据进行临时的存储，以提升访问效率</p>
+<h3 id="常见的缓存"><a href="#常见的缓存" class="headerlink" title="常见的缓存"></a>常见的缓存</h3><ol>
+<li>浏览器缓存</li>
+<li>硬件缓存</li>
+<li>CDN</li>
+<li>数据库缓存<h3 id="缓存解决递归实现的斐波那契数列存在的性能问题（重点）"><a href="#缓存解决递归实现的斐波那契数列存在的性能问题（重点）" class="headerlink" title="缓存解决递归实现的斐波那契数列存在的性能问题（重点）"></a>缓存解决递归实现的斐波那契数列存在的性能问题（重点）</h3></li>
+</ol>
+<h3 id="实现jQuery缓存"><a href="#实现jQuery缓存" class="headerlink" title="实现jQuery缓存"></a>实现jQuery缓存</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createCache</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> cache = &#123;&#125;;</span><br><span class="line">    <span class="keyword">var</span> keys = [];</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">key, value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(value != <span class="literal">undefined</span>)&#123;</span><br><span class="line">            cache[key] = value;</span><br><span class="line">            keys.push(key);</span><br><span class="line">            <span class="keyword">if</span>(keys.length &gt; <span class="number">20</span>)&#123;</span><br><span class="line">                <span class="keyword">delete</span> cache[keys.shift()];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cache[key];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="jQuery的缓存源码"><a href="#jQuery的缓存源码" class="headerlink" title="jQuery的缓存源码"></a>jQuery的缓存源码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createCache</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> keys = [];</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">cache</span>(<span class="params">key, value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(keys.push(key + <span class="string">" "</span>) &gt; <span class="number">20</span>)&#123;</span><br><span class="line">            <span class="keyword">delete</span> cache[keys.shift()];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (cache[key + <span class="string">" "</span>] = value);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cache;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="沙箱"><a href="#沙箱" class="headerlink" title="沙箱"></a>沙箱</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//变量声明</span></span><br><span class="line">    <span class="comment">//功能代码</span></span><br><span class="line">    <span class="comment">//如果需要，使用window向外界暴露接口</span></span><br><span class="line">&#125;)(<span class="built_in">window</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="传参的目的"><a href="#传参的目的" class="headerlink" title="传参的目的"></a>传参的目的</h3><ol>
+<li>利于代码压缩</li>
+<li>实现逻辑隔离</li>
+</ol>
+<h3 id="沙箱的用途"><a href="#沙箱的用途" class="headerlink" title="沙箱的用途"></a>沙箱的用途</h3><ol>
+<li>框架</li>
+<li>组件</li>
+<li>插件</li>
+</ol>
+<h2 id="函数的调用模式"><a href="#函数的调用模式" class="headerlink" title="函数的调用模式"></a>函数的调用模式</h2><h3 id="函数调用模式"><a href="#函数调用模式" class="headerlink" title="函数调用模式"></a>函数调用模式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">函数名();</span><br><span class="line"><span class="comment">//this---&gt;window</span></span><br></pre></td></tr></table></figure>
+<h3 id="方法调用模式"><a href="#方法调用模式" class="headerlink" title="方法调用模式"></a>方法调用模式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">对象.方法名();</span><br><span class="line"><span class="comment">//this----&gt;调用该方法的对象</span></span><br></pre></td></tr></table></figure>
+<h3 id="构造函数调用模式"><a href="#构造函数调用模式" class="headerlink" title="构造函数调用模式"></a>构造函数调用模式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> 函数名();</span><br><span class="line"><span class="comment">//this----&gt; new创建出来的实例</span></span><br></pre></td></tr></table></figure>
+<h3 id="上下文调用模式"><a href="#上下文调用模式" class="headerlink" title="上下文调用模式"></a>上下文调用模式</h3><h3 id="工厂模式和寄生模式创建对象（只是调用模式不同）"><a href="#工厂模式和寄生模式创建对象（只是调用模式不同）" class="headerlink" title="工厂模式和寄生模式创建对象（只是调用模式不同）"></a>工厂模式和寄生模式创建对象（只是调用模式不同）</h3><h2 id="上下文调用模式-1"><a href="#上下文调用模式-1" class="headerlink" title="上下文调用模式"></a>上下文调用模式</h2><h3 id="call"><a href="#call" class="headerlink" title="call"></a>call</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">函数名.call(<span class="keyword">this</span>要指向的对象, arg1..argN);</span><br><span class="line"><span class="comment">//1. 调用函数</span></span><br><span class="line"><span class="comment">//2. 将this指向第一个参数</span></span><br><span class="line"><span class="comment">//3. 将第二个及之后的所有的参数，作为实参依次传递给函数</span></span><br></pre></td></tr></table></figure>
+<h3 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">函数名.apply(<span class="keyword">this</span>要指向的对象, 数组或者伪数组);</span><br><span class="line"><span class="comment">//1. 调用函数</span></span><br><span class="line"><span class="comment">//2. 将this指向第一个参数</span></span><br><span class="line"><span class="comment">//3. 将第二个参数中的数组或者伪数组，拆解开，将所有的元素依次作为实参依次传递给函数</span></span><br></pre></td></tr></table></figure>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li>如果第一个参数为null或者Undefined，this指向window</li>
+<li>如果第一个参数为值类型的数据，就会将该数据转换成对应的引用类型的数据，再讲this指向该引用类型数据</li>
+</ol>
+<h3 id="tip"><a href="#tip" class="headerlink" title="tip"></a>tip</h3><p>一般情况下apply方法的传参特性会非常常用！！！</p>
+<h3 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h3><ol>
+<li>转换伪数组</li>
+<li>求数组最大值</li>
+</ol>
+<h2 id="forEach和map"><a href="#forEach和map" class="headerlink" title="forEach和map"></a>forEach和map</h2><h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">数组.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">value, index, arr</span>)</span>&#123;&#125;)</span><br><span class="line"><span class="comment">//遍历数组，执行回调函数</span></span><br><span class="line"><span class="comment">//value:当前正在遍历的元素</span></span><br><span class="line"><span class="comment">//index:当前正在遍历的元素的索引</span></span><br><span class="line"><span class="comment">//arr：当前正在遍历的数组</span></span><br></pre></td></tr></table></figure>
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">数组.map(<span class="function"><span class="keyword">function</span>(<span class="params">value, index, arr</span>)</span>&#123;&#125;)</span><br><span class="line"><span class="comment">//遍历数组，执行回调函数</span></span><br><span class="line"><span class="comment">//value:当前正在遍历的元素</span></span><br><span class="line"><span class="comment">//index:当前正在遍历的元素的索引</span></span><br><span class="line"><span class="comment">//arr：当前正在遍历的数组</span></span><br></pre></td></tr></table></figure>
+<h3 id="map的返回值"><a href="#map的返回值" class="headerlink" title="map的返回值"></a>map的返回值</h3><p>将每次执行回调函数的返回值，组合成一个新的数组，作为map方法的返回值！</p>
+<h3 id="map的练习"><a href="#map的练习" class="headerlink" title="map的练习"></a>map的练习</h3><ol>
+<li>将数组中的元素转成字符串</li>
+<li>求最大值</li>
+<li>生成随机数</li>
+</ol>
+<h2 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty"></a>Object.defineProperty</h2><p>用来给对象添加属性的<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(obj, propertyName, descriptor);</span><br><span class="line"><span class="comment">//obj 就是要给谁添加属性</span></span><br><span class="line"><span class="comment">//propertyName 要添加的属性名</span></span><br><span class="line"><span class="comment">//descriptor 属性的描述信息，也就是特性集合，是一个对象哦~</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="descriptor对象中的属性"><a href="#descriptor对象中的属性" class="headerlink" title="descriptor对象中的属性"></a>descriptor对象中的属性</h3><ul>
+<li>writable 默认为false，表示属性是否可写</li>
+<li>configurable 默认为false， 表示属性是否可以配置（删除）</li>
+<li>enumerable 默认为false， 表示属性是否可以被遍历（for-in）</li>
+<li>value 用来设置属性的值</li>
+<li>get和set方法，和writable一样都可以用来设置属性是否可以写</li>
+</ul>
+<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><h3 id="如何开启严格模式"><a href="#如何开启严格模式" class="headerlink" title="如何开启严格模式"></a>如何开启严格模式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span></span><br><span class="line"><span class="meta">'use strict'</span></span><br></pre></td></tr></table></figure>
+<h3 id="严格模式中的特点"><a href="#严格模式中的特点" class="headerlink" title="严格模式中的特点"></a>严格模式中的特点</h3><ol>
+<li>声明变量必须使用var</li>
+<li>对象的属性不能重名</li>
+<li>函数的形参名不能重复</li>
+<li>八进制常量不允许使用</li>
+<li>eval有自己的作用域</li>
+</ol>
+<h2 id="案例（歌曲管理，Tab栏切换）"><a href="#案例（歌曲管理，Tab栏切换）" class="headerlink" title="案例（歌曲管理，Tab栏切换）"></a>案例（歌曲管理，Tab栏切换）</h2><h2 id="事件兼容性处理"><a href="#事件兼容性处理" class="headerlink" title="事件兼容性处理"></a>事件兼容性处理</h2><h3 id="三种注册事件的方式"><a href="#三种注册事件的方式" class="headerlink" title="三种注册事件的方式"></a>三种注册事件的方式</h3><ol>
+<li>onclick简单形式</li>
+<li>addEventListener(type, handler, useCapture)</li>
+<li>attachEvent(type, handler)</li>
+</ol>
+<h3 id="addEventListener和attachEvent的区别"><a href="#addEventListener和attachEvent的区别" class="headerlink" title="addEventListener和attachEvent的区别"></a>addEventListener和attachEvent的区别</h3><ol>
+<li>回调函数中获取事件对象的方式不一样，addEventListener通过回调函数的参数获取，attachEvent通过window.event获取</li>
+<li>回调函数中的this指向不一致，addEventListener中this指向当前dom对象，attachEvent中this指向window</li>
+</ol>
+<h3 id="兼容性处理的通用函数"><a href="#兼容性处理的通用函数" class="headerlink" title="兼容性处理的通用函数"></a>兼容性处理的通用函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">registerEvent</span>(<span class="params">ele, type, handler</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(ele.addEventListener)&#123;</span><br><span class="line">        ele.addEventListener(type, handler);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(ele.attachEvent)&#123;</span><br><span class="line">        ele.attachEvent(<span class="string">"on"</span> + type, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            handler.call(ele, <span class="built_in">window</span>.event);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        ele[<span class="string">"on"</span> + type] = handler;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="//toffeeBlock.me/2016/04/12/面向对象编程第六篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="奶糖的博客">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="奶糖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/12/面向对象编程第六篇/" itemprop="url">面向对象编程第六篇--笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-12T10:22:30+08:00">
+                2016-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  882
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="闭包优化缓存解决递归实现的斐波那契数列存在的性能问题"><a href="#闭包优化缓存解决递归实现的斐波那契数列存在的性能问题" class="headerlink" title="闭包优化缓存解决递归实现的斐波那契数列存在的性能问题"></a>闭包优化缓存解决递归实现的斐波那契数列存在的性能问题</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createFib</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> arr = [];</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fib</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> num = arr[n];</span><br><span class="line">        <span class="keyword">if</span>(!num)&#123;</span><br><span class="line">            <span class="keyword">if</span>(n &lt;= <span class="number">2</span>)&#123;</span><br><span class="line">                num = <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                num = fib(n - <span class="number">1</span>) + fib(n <span class="number">-2</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            arr[n] = num;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="jQuery缓存实现"><a href="#jQuery缓存实现" class="headerlink" title="jQuery缓存实现"></a>jQuery缓存实现</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createCache</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> cache = &#123;&#125;;</span><br><span class="line">    <span class="keyword">var</span> keys = [];</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">key, value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(value != <span class="literal">undefined</span>)&#123;</span><br><span class="line">            cache[key] = value;</span><br><span class="line">            <span class="keyword">if</span>(keys.push(key) &gt; <span class="number">20</span>)&#123;</span><br><span class="line">                <span class="keyword">delete</span> cache[keys.shift()];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cache[key];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="jQuery缓存源码分析"><a href="#jQuery缓存源码分析" class="headerlink" title="jQuery缓存源码分析"></a>jQuery缓存源码分析</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createCache</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> keys = [];</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">cache</span>(<span class="params">key, value</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(keys.push(key + <span class="string">" "</span>) &gt; <span class="number">20</span>)&#123;</span><br><span class="line">            <span class="keyword">delete</span> cache[keys.shift()];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (cache[key + <span class="string">" "</span>] = value);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cache;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="沙箱模式"><a href="#沙箱模式" class="headerlink" title="沙箱模式"></a>沙箱模式</h2><p>一个封闭的隔离的环境！</p>
+<p>在JS中通过函数来创建沙箱</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//变量的声明</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//主要的功能代码</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//如果需要，就通过window对象向外界暴露接口</span></span><br><span class="line"></span><br><span class="line">&#125;)(<span class="built_in">window</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="将window对象作为参数的目的"><a href="#将window对象作为参数的目的" class="headerlink" title="将window对象作为参数的目的"></a>将window对象作为参数的目的</h3><ol>
+<li>便于代码压缩</li>
+<li>实现逻辑上的隔离，外部不访问里面的东西，里面也不访问外面的东西</li>
+</ol>
+<h3 id="沙箱的应用"><a href="#沙箱的应用" class="headerlink" title="沙箱的应用"></a>沙箱的应用</h3><ol>
+<li>框架</li>
+<li>组件</li>
+<li>插件</li>
+</ol>
+<h2 id="函数的调用模式"><a href="#函数的调用模式" class="headerlink" title="函数的调用模式"></a>函数的调用模式</h2><h3 id="函数调用模式"><a href="#函数调用模式" class="headerlink" title="函数调用模式"></a>函数调用模式</h3><p>函数名();<br>this —&gt; window</p>
+<h3 id="方法调用模式"><a href="#方法调用模式" class="headerlink" title="方法调用模式"></a>方法调用模式</h3><p>对象.方法名();<br>this —&gt; 调用该方法的对象</p>
+<h3 id="构造函数调用模式"><a href="#构造函数调用模式" class="headerlink" title="构造函数调用模式"></a>构造函数调用模式</h3><p>new 函数名();<br>this —&gt; new创建出来的实例</p>
+<h3 id="上下文调用模式"><a href="#上下文调用模式" class="headerlink" title="上下文调用模式"></a>上下文调用模式</h3><h2 id="两种创建对象的方式"><a href="#两种创建对象的方式" class="headerlink" title="两种创建对象的方式"></a>两种创建对象的方式</h2><h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createObj</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    obj.name = name;</span><br><span class="line">    obj.age = age;</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = createObj(<span class="string">"郑天羊"</span>, <span class="number">18</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="寄生模式"><a href="#寄生模式" class="headerlink" title="寄生模式"></a>寄生模式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    obj.name = name;</span><br><span class="line">    obj.age = age;</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person(<span class="string">"郑天羊"</span>, <span class="number">18</span>);</span><br></pre></td></tr></table></figure>
+<p>工厂模式和寄生模式都可以用来创建对象，但是调用模式不一样，工厂模式是函数调用模式，寄生模式是构造函数调用模式！</p>
+<h2 id="上下文调用模式-1"><a href="#上下文调用模式-1" class="headerlink" title="上下文调用模式"></a>上下文调用模式</h2><h3 id="call"><a href="#call" class="headerlink" title="call"></a>call</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">函数名.call(obj, arg1...argN);</span><br><span class="line"><span class="comment">//功能：</span></span><br><span class="line">    <span class="comment">//1. 调用函数</span></span><br><span class="line">    <span class="comment">//2. 改变this指向为第一个参数中的对象</span></span><br><span class="line">    <span class="comment">//3. 将第二个及以后的所有参数，依次的传递给函数作为实参</span></span><br></pre></td></tr></table></figure>
+<h3 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">函数名.apply(obj, 数组or伪数组);</span><br><span class="line"><span class="comment">//功能：</span></span><br><span class="line">    <span class="comment">//1. 调用函数</span></span><br><span class="line">    <span class="comment">//2. 改变this指向为第一个参数中的对象</span></span><br><span class="line">    <span class="comment">//3. 将第二个参数的数组或者伪数组，中的元素一一拆解，依次传递给函数作为实参</span></span><br></pre></td></tr></table></figure>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li>如果call和apply的第一个参数为null或者undefined,this将会指向window</li>
+<li>如果call和apply的第一个参数为值类型的数据，会将值类型的数据转换成其对应的引用类型的数据，this指向该引用类型的数据</li>
+</ol>
+<p>tips: 一般情况下apply的传参特性会被使用的居多（转换伪数组为真数组，求最大值）</p>
+<h2 id="forEach和map的使用"><a href="#forEach和map的使用" class="headerlink" title="forEach和map的使用"></a>forEach和map的使用</h2><p>都可以用来遍历数组</p>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">数组.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">value, index, arr</span>)</span>&#123;&#125;)</span><br><span class="line"><span class="comment">//value：正在遍历的数组元素</span></span><br><span class="line"><span class="comment">//index: 正在遍历的数组元素的索引</span></span><br><span class="line"><span class="comment">//arr: 正在遍历的数组</span></span><br></pre></td></tr></table></figure>
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">数组.map(<span class="function"><span class="keyword">function</span>(<span class="params">value, index, arr</span>)</span>&#123;&#125;)</span><br><span class="line"><span class="comment">//value：正在遍历的数组元素</span></span><br><span class="line"><span class="comment">//index: 正在遍历的数组元素的索引</span></span><br><span class="line"><span class="comment">//arr: 正在遍历的数组</span></span><br></pre></td></tr></table></figure>
+<p>map是有返回值的，他的返回值是，将每次调用回调函数之后的返回值拼接成一个新的数组，将这个数组返回，作为map的返回值！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="//toffeeBlock.me/2016/04/09/面向对象编程第五篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="奶糖的博客">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="奶糖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/09/面向对象编程第五篇/" itemprop="url">面向对象编程第五篇--笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-09T22:15:35+08:00">
+                2016-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  778
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><p>函数可以创建作用域，函数中又可以声明函数，这样就形成了作用域套作用域的链式结构，称作作用域链</p>
+<h3 id="变量搜索原则"><a href="#变量搜索原则" class="headerlink" title="变量搜索原则"></a>变量搜索原则</h3><ol>
+<li>现在使用变量的作用域中进行查找，如果找到了，就直接使用</li>
+<li>如果没有找到，就去上一级作用域链中进行查找，如果找到了，就直接使用</li>
+<li>如果没有找到，就沿着作用域链依次向上查找，直到找到全局作用域</li>
+</ol>
+<h3 id="绘制作用域链图"><a href="#绘制作用域链图" class="headerlink" title="绘制作用域链图"></a>绘制作用域链图</h3><ol>
+<li>首先绘制0级作用域链</li>
+<li>在全局作用域中查找变量以及函数的声明，用小方块的形式将其画在0级作用域线上</li>
+<li>再从0级作用域链中的函数中引出下一级作用域链</li>
+<li>重复以上步骤！！！</li>
+</ol>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h3><p>闭包就是指可以访问独立的数据的函数！！！</p>
+<h3 id="闭包要解决的问题"><a href="#闭包要解决的问题" class="headerlink" title="闭包要解决的问题"></a>闭包要解决的问题</h3><p>函数内部声明的变量无法再函数外部使用</p>
+<h3 id="闭包的基本模型"><a href="#闭包的基本模型" class="headerlink" title="闭包的基本模型"></a>闭包的基本模型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> data = <span class="string">""</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> inner;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="如何使用闭包返回多个函数"><a href="#如何使用闭包返回多个函数" class="headerlink" title="如何使用闭包返回多个函数"></a>如何使用闭包返回多个函数</h3><p>在函数内部创建一个对象，在对象中封装多个函数，返回对象，在外部就可以使用对象，访问各个方法</p>
+<h3 id="闭包的原理"><a href="#闭包的原理" class="headerlink" title="闭包的原理"></a>闭包的原理</h3><p>上级作用域无法访问下级作用域中的变量，但是下级作用域可以访问上级作用域的变量</p>
+<h3 id="闭包的用途"><a href="#闭包的用途" class="headerlink" title="闭包的用途"></a>闭包的用途</h3><ol>
+<li>可以用来保护数据， 就是变量被保护在外部函数中，想要修改变量只能通过闭包函数，可以在闭包函数中添加一些校验逻辑，以保证数据的合理性以及安全性</li>
+<li>可以为函数新增私有的变量</li>
+</ol>
+<h3 id="使用闭包解决for循环中注册点击事件的问题"><a href="#使用闭包解决for循环中注册点击事件的问题" class="headerlink" title="使用闭包解决for循环中注册点击事件的问题"></a>使用闭包解决for循环中注册点击事件的问题</h3><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>点击事件在触发的时候，访问的i变量已经变成了最后一个值！！</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>通过闭包来创建一个函数，该函数拥有自己独立的一个变量j，在循环的时候，将当前的i的值保存一份交给j，再将该闭包函数注册给点击事件，这样在点击事件触发的时候，就不会去访问全局的i，而是使用自己的j</p>
+<h3 id="使用闭包解决for循环中setTimeout代码执行的问题"><a href="#使用闭包解决for循环中setTimeout代码执行的问题" class="headerlink" title="使用闭包解决for循环中setTimeout代码执行的问题"></a>使用闭包解决for循环中setTimeout代码执行的问题</h3><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>将数据临时的存储起来以提高访问效率</p>
+<h3 id="浏览器缓存（重点）"><a href="#浏览器缓存（重点）" class="headerlink" title="浏览器缓存（重点）"></a>浏览器缓存（重点）</h3><h3 id="硬件缓存"><a href="#硬件缓存" class="headerlink" title="硬件缓存"></a>硬件缓存</h3><h3 id="CDN（重点）"><a href="#CDN（重点）" class="headerlink" title="CDN（重点）"></a>CDN（重点）</h3><h3 id="数据库缓存"><a href="#数据库缓存" class="headerlink" title="数据库缓存"></a>数据库缓存</h3><h3 id="使用缓存解决递归实现的斐波那契数列存在的性能问题"><a href="#使用缓存解决递归实现的斐波那契数列存在的性能问题" class="headerlink" title="使用缓存解决递归实现的斐波那契数列存在的性能问题"></a>使用缓存解决递归实现的斐波那契数列存在的性能问题</h3><h4 id="性能问题"><a href="#性能问题" class="headerlink" title="性能问题"></a>性能问题</h4><p>由于递归实现的斐波那契数列中，存在大量的重复计算，导致性能低下</p>
+<h4 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h4><p>使用缓存，将每次计算后的结果进行保存，在下次获取该数据的时候，就直接去缓存中拿，而避免了重复的计算</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="//toffeeBlock.me/2016/04/02/面向对象编程第四篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="奶糖的博客">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="奶糖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/04/02/面向对象编程第四篇/" itemprop="url">面向对象编程第四篇</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-02T14:22:13+08:00">
+                2016-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  430
                 </span>
               
 
@@ -345,15 +968,695 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <h2 id="面向对象复习"><a href="#面向对象复习" class="headerlink" title="面向对象复习"></a>面向对象复习</h2><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><h3 id="什么是递归"><a href="#什么是递归" class="headerlink" title="什么是递归"></a>什么是递归</h3><p>在函数直接或者间接的调用自己，就是递归</p>
+<h3 id="递归的两个要素"><a href="#递归的两个要素" class="headerlink" title="递归的两个要素"></a>递归的两个要素</h3><ol>
+<li>自己调自己</li>
+<li>结束条件</li>
+</ol>
+<h3 id="化归思想"><a href="#化归思想" class="headerlink" title="化归思想"></a>化归思想</h3><p>化繁为简，化难为易的过程， 转化 归结 的简称</p>
+<h3 id="前n项和"><a href="#前n项和" class="headerlink" title="前n项和"></a>前n项和</h3><h3 id="n的m次方"><a href="#n的m次方" class="headerlink" title="n的m次方"></a>n的m次方</h3><h3 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h3><h3 id="递归获取后代元素（重点！！）"><a href="#递归获取后代元素（重点！！）" class="headerlink" title="递归获取后代元素（重点！！）"></a>递归获取后代元素（重点！！）</h3><h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><p>作用域就是变量起作用的范围</p>
+<p>在代码写好的时候，根据代码的书写结构，就可以确定变量的作用域，这种作用域就是词法作用域</p>
+<p>词法作用域又叫静态作用域</p>
+<p>js中没有块级作用域（代码块限定的作用域叫做块级作用域）</p>
+<h2 id="变量提升-hoisting"><a href="#变量提升-hoisting" class="headerlink" title="变量提升(hoisting)"></a>变量提升(hoisting)</h2><p>JS代码执行分两个阶段：1.预解析阶段  2.执行阶段</p>
+<p>在预解析阶段，会对代码中所有的变量声明以及函数声明做提升操作，提升到其所在的作用域的最顶上！</p>
+<h3 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h3><ol>
+<li>函数同名的时候，会全部提升，但是后面的会覆盖掉前面的</li>
+<li>函数和变量同名的情况，只会提升函数，忽略掉变量的声明</li>
+<li>变量提升是分作用域的</li>
+<li>变量提升是分段（script标签）的</li>
+<li>条件式函数声明（在条件语句中的函数声明），会将条件式函数声明视为函数表达式做处理，只会提升函数名，函数体不提升</li>
+<li>函数中形参赋值的过程是 在变量提升之前！</li>
+</ol>
+<p>函数中的形参，就相当于是在函数中声明一个局部的变量</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="//toffeeBlock.me/2016/03/18/面向对象编程第三篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="奶糖的博客">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="奶糖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/18/面向对象编程第三篇/" itemprop="url">面向对象编程第三篇</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-18T10:56:08+08:00">
+                2016-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  776
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="instanceof关键字"><a href="#instanceof关键字" class="headerlink" title="instanceof关键字"></a>instanceof关键字</h2><pre><code>判断构造函数的原型是不是在对象的原型链上
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对象 <span class="keyword">instanceof</span> 构造函数</span><br></pre></td></tr></table></figure>
+<h2 id="创建函数的三种方式"><a href="#创建函数的三种方式" class="headerlink" title="创建函数的三种方式"></a>创建函数的三种方式</h2><h3 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params">参数列表</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 函数名 = <span class="function"><span class="keyword">function</span> (<span class="params">参数列表</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 函数名 = <span class="keyword">new</span> <span class="built_in">Function</span>();</span><br></pre></td></tr></table></figure>
+<h2 id="Function的使用"><a href="#Function的使用" class="headerlink" title="Function的使用"></a>Function的使用</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> func = <span class="keyword">new</span> <span class="built_in">Function</span>();  <span class="comment">//创建空函数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func1 = <span class="keyword">new</span> <span class="built_in">Function</span>(methodBody);  <span class="comment">//创建有函数体的函数，methodBody是一个字符串</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func2 = <span class="keyword">new</span> <span class="built_in">Function</span>(arg1, arg2...argN, methodBody)  <span class="comment">//创建一个以methodBody为函数体，之前所有的参数为形参名的函数， 所有的参数都是字符串！！</span></span><br></pre></td></tr></table></figure>
+<h3 id="如何解决Function的函数体过长的问题？"><a href="#如何解决Function的函数体过长的问题？" class="headerlink" title="如何解决Function的函数体过长的问题？"></a>如何解决Function的函数体过长的问题？</h3><ol>
+<li>字符串拼接</li>
+<li>使用模板引擎</li>
+<li>使用反引号</li>
+</ol>
+<h2 id="eval的使用"><a href="#eval的使用" class="headerlink" title="eval的使用"></a>eval的使用</h2><p>eval是个函数，可以将字符串转换成代码并立即执行！</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span>(符合js语法规范的字符串);</span><br></pre></td></tr></table></figure>
+<h3 id="使用eval处理JSON格式数据的时候的问题"><a href="#使用eval处理JSON格式数据的时候的问题" class="headerlink" title="使用eval处理JSON格式数据的时候的问题"></a>使用eval处理JSON格式数据的时候的问题</h3><p>当使用eval处理JSON格式数据的时候，eval会将JSON格式字符串中的大括号{}，当做代码段来解析，所以会报错！</p>
+<p>解决方案：</p>
+<ol>
+<li><p>将变量声明也同时放在eval中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jsonStr = <span class="string">"&#123;key: value&#125;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">eval</span>(<span class="string">"var obj="</span> + jsonStr);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在json格式的字符串前后拼接小括号</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jsonStr = <span class="string">"&#123;key: value&#125;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">eval</span>(<span class="string">"("</span> + jsonStr + <span class="string">")"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>JSON2</p>
+<h2 id="Function和eval的异同"><a href="#Function和eval的异同" class="headerlink" title="Function和eval的异同"></a>Function和eval的异同</h2><ol>
+<li>都能将字符串转换成代码</li>
+<li>Funciton创建出来的是函数，需要手动去调用，代码才会执行，而eval会直接将字符串转成代码并执行</li>
+</ol>
+<p>问题：</p>
+<ol>
+<li>执行效率的问题</li>
+<li>安全性问题（XSS）</li>
+</ol>
+<h2 id="函数的原型链"><a href="#函数的原型链" class="headerlink" title="函数的原型链"></a>函数的原型链</h2><p>如果将函数当做一个对象对待的话，那么他也是由构造函数创建出来的，所以这个函数对象，也会有相应的原型链</p>
+<p>js中所有的函数的构造函数都是Function, 包括Function本身</p>
+<h2 id="完整的原型链绘制"><a href="#完整的原型链绘制" class="headerlink" title="完整的原型链绘制"></a>完整的原型链绘制</h2><h2 id="Object和Function的关系"><a href="#Object和Function的关系" class="headerlink" title="Object和Function的关系"></a>Object和Function的关系</h2><p>可以通过instanceof关键字来确定两者的关系， Object和Function互为实例！！</p>
+<h2 id="arguments对象"><a href="#arguments对象" class="headerlink" title="arguments对象"></a>arguments对象</h2><p>arguments是函数内部的一个对象，他是一个伪数组<br>在函数调用的时候，会将函数的实参，依次的存入这个伪数组中。</p>
+<p>arguments.length 属性，表示函数在调用的时候，传入的实参的个数<br>arguments.callee 属性，指的就是arguments对象所在的函数，一般用来在匿名函数中做递归</p>
+<h2 id="函数对象的成员"><a href="#函数对象的成员" class="headerlink" title="函数对象的成员"></a>函数对象的成员</h2><ul>
+<li>arguments</li>
+<li>caller 函数的调用环境，如果是在全局，则为null，如果是在其他函数当中调用的，那么caller为所在的那个函数</li>
+<li>length 函数的形参的个数</li>
+<li>name  函数的名称  函数声明和函数表达式的函数名为正常的函数名，new Function创建出来的函数名为 anonymous</li>
+</ul>
+<h2 id="静态成员以及实例成员"><a href="#静态成员以及实例成员" class="headerlink" title="静态成员以及实例成员"></a>静态成员以及实例成员</h2><ul>
+<li>静态成员： 通过构造函数访问的成员就是静态成员</li>
+<li>实例成员： 通过实例去访问的成员就是实例成员</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="//toffeeBlock.me/2016/02/14/面向对象编程第二篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="奶糖的博客">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="奶糖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/02/14/面向对象编程第二篇/" itemprop="url">面向对象编程第二篇</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-14T15:28:14+08:00">
+                2016-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,285
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="面向对象编程举例"><a href="#面向对象编程举例" class="headerlink" title="面向对象编程举例"></a>面向对象编程举例</h2><ol>
+<li>面向过程的方式去实现功能  DRY</li>
+<li>使用函数进行了封装</li>
+<li>使用面向对象的方式进行封装</li>
+</ol>
+<h2 id="面向对象的三大特性"><a href="#面向对象的三大特性" class="headerlink" title="面向对象的三大特性"></a>面向对象的三大特性</h2><h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><pre><code>将属性和方法，封装起来，在对象内部实现某些功能，对外界之暴露接口，外界在适用对象的时候，只需要关心接口的使用，而不需要关心对象内部功能的具体实现
+</code></pre><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><pre><code>自己没有的东西，别人有，拿过来使用，就是继承。（拿来主义）
+</code></pre><h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><pre><code>父类指针指向子类对象（JS中不支持多态）
+</code></pre><h2 id="创建对象的三种方式"><a href="#创建对象的三种方式" class="headerlink" title="创建对象的三种方式"></a>创建对象的三种方式</h2><h3 id="字面量方式"><a href="#字面量方式" class="headerlink" title="字面量方式"></a>字面量方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name:<span class="string">""</span>,</span><br><span class="line">    age:<span class="number">18</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>缺陷:复用性差!!</p>
+<h3 id="内置构造函数"><a href="#内置构造函数" class="headerlink" title="内置构造函数"></a>内置构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.name = <span class="string">""</span>;</span><br><span class="line">obj.age = <span class="number">18</span>;</span><br></pre></td></tr></table></figure>
+<p>缺陷:复用性差!!</p>
+<h3 id="自定义构造函数"><a href="#自定义构造函数" class="headerlink" title="自定义构造函数"></a>自定义构造函数</h3><h2 id="自定义构造函数-1"><a href="#自定义构造函数-1" class="headerlink" title="自定义构造函数"></a>自定义构造函数</h2><h3 id="构造函数的概念"><a href="#构造函数的概念" class="headerlink" title="构造函数的概念"></a>构造函数的概念</h3><pre><code>构造函数也是函数，他是用来初始化对象的！
+</code></pre><h3 id="构造函数的特点"><a href="#构造函数的特点" class="headerlink" title="构造函数的特点"></a>构造函数的特点</h3><pre><code>* 首字母大写
+* 一般和new关键字一起使用
+* 不需要手动写返回值
+</code></pre><h3 id="构造函数的执行过程"><a href="#构造函数的执行过程" class="headerlink" title="构造函数的执行过程"></a>构造函数的执行过程</h3><pre><code>1. 使用new关键字创建对象
+2. 调用构造函数
+3. 将构造函数内部的this指向new创建出来的对象
+4. 在构造函数内部使用this为对象新增成员
+5. 返回该对象
+</code></pre><h3 id="构造函数的使用注意事项"><a href="#构造函数的使用注意事项" class="headerlink" title="构造函数的使用注意事项"></a>构造函数的使用注意事项</h3><pre><code>* 返回值：不需要手动写返回值，如果写了
+    * 如果是值类型的，将不会对返回值有任何的影响
+    * 如果是引用类型的，则会将默认返回值进行替换
+* 如果把构造函数当做普通函数调用，this会指向window，返回值如果不写，会是undefined
+</code></pre><h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><h3 id="原型是什么？"><a href="#原型是什么？" class="headerlink" title="原型是什么？"></a>原型是什么？</h3><pre><code>构造函数在创建出来的时候，系统会默认的帮构造函数创建并且关联一个空的对象，这个对象就是原型
+</code></pre><h3 id="原型的作用？"><a href="#原型的作用？" class="headerlink" title="原型的作用？"></a>原型的作用？</h3><pre><code>原型中的成员可以被和其关联的构造函数所创建出来的所有的对象共享！
+</code></pre><h3 id="原型的访问方式"><a href="#原型的访问方式" class="headerlink" title="原型的访问方式"></a>原型的访问方式</h3><ul>
+<li>构造函数.prototype</li>
+<li>对象.<strong>proto</strong>  (不推荐使用，因为非标准，有兼容性问题)</li>
+</ul>
+<h3 id="原型的使用"><a href="#原型的使用" class="headerlink" title="原型的使用"></a>原型的使用</h3><ul>
+<li>利用对象的动态特性，为原型对象新增成员</li>
+<li>直接替换原型对象</li>
+</ul>
+<h3 id="原型的使用注意事项"><a href="#原型的使用注意事项" class="headerlink" title="原型的使用注意事项"></a>原型的使用注意事项</h3><ol>
+<li>一般情况下将方法放在原型中，将属性放在对象中</li>
+<li>当访问对象的属性的时候，会先在对象自身中查找，如果没有会去原型中查找</li>
+<li>当替换原型对象的时候，替换之前所创建的对象和替换之后创建的对象的原型不一致！</li>
+<li>对象的原型就是创建对象那一刻构造函数所关联的那个原型</li>
+<li>设置对象的属性的时候，不会去原型中进行查找，只会在自身设置</li>
+</ol>
+<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>原型中的一个属性，指向和原型相关的构造函数！</p>
+<p>在替换原型对象的时候，这个constructor属性就不准确，所以会手动进行补充</p>
+<h2 id="继承的实现方式"><a href="#继承的实现方式" class="headerlink" title="继承的实现方式"></a>继承的实现方式</h2><h3 id="混入式继承（mix-in）"><a href="#混入式继承（mix-in）" class="headerlink" title="混入式继承（mix-in）"></a>混入式继承（mix-in）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">key</span>: value, <span class="attr">key1</span>:value1&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> obj1)&#123;</span><br><span class="line">    obj[k] = obj1[k];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h3><ul>
+<li><p>利用混入的方式为原型对象添加成员</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">key</span>: value, <span class="attr">key1</span>:value1&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> obj1)&#123;</span><br><span class="line">    Person.prototype[k] = obj1[k];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>直接替换原型对象</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">key</span>: value, <span class="attr">key1</span>:value1&#125;;</span><br><span class="line"></span><br><span class="line">Person.prototype = obj1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+<h3 id="经典继承"><a href="#经典继承" class="headerlink" title="经典继承"></a>经典继承</h3><p>经典继承的根本，其实还是原型继承！<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>.create(obj1);</span><br><span class="line"><span class="comment">//创建一个对象obj，obj的原型是obj1</span></span><br></pre></td></tr></table></figure></p>
+<p>经典继承的兼容性处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function myCreate(obj)&#123;</span><br><span class="line">    if(Object.create)&#123;</span><br><span class="line">        return Object.create(obj);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        function F()&#123;&#125;</span><br><span class="line">        F.prototype = obj;</span><br><span class="line">        return new F();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><pre><code>在js中，对象都有原型，原型也是对象，所以原型也有原型，那么就形成了链式结构，称作原型链！
+</code></pre><h3 id="属性搜索原则"><a href="#属性搜索原则" class="headerlink" title="属性搜索原则"></a>属性搜索原则</h3><ol>
+<li>在对象访问成员的时候，会现在自身进行查找，如果找到了就直接使用</li>
+<li>如果没有找到，就去对象的原型中进行查找，如果找到了就直接使用</li>
+<li>如果没有找到，就沿着原型链，依次向上查找，直到null</li>
+</ol>
+<h2 id="Object-prototype的成员"><a href="#Object-prototype的成员" class="headerlink" title="Object.prototype的成员"></a>Object.prototype的成员</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>constructor</code></td>
+<td>指向和原型相关的构造函数</td>
+</tr>
+<tr>
+<td><code>hasOwnProperty</code></td>
+<td>判断对象本身是否拥有某个属性</td>
+</tr>
+<tr>
+<td><code>isPrototypeOf</code></td>
+<td>判断对象是不是另外一个对象的原型对象</td>
+</tr>
+<tr>
+<td><code>propertyIsEnumerable</code></td>
+<td>判断属性是否属于对象自身并且可以被遍历</td>
+</tr>
+<tr>
+<td><code>toString</code></td>
+<td>将对象转成字符串</td>
+</tr>
+<tr>
+<td><code>toLocaleString</code></td>
+<td>将对象转成本地格式的字符串</td>
+</tr>
+<tr>
+<td><code>valueOf</code></td>
+<td>当值类型和引用类型参与运算的时候，会调用引用类型的valueOf方法，如果返回值还不能参与运算就去调用toString方法</td>
+</tr>
+<tr>
+<td><code>__proto__</code></td>
+<td>指向对象的原型对象</td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="//toffeeBlock.me/2016/02/06/面向对象编程第一篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="奶糖的博客">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="奶糖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/02/06/面向对象编程第一篇/" itemprop="url">面向对象编程第一篇</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-06T18:04:44+08:00">
+                2016-02-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  720
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="JavaScript基础知识复习"><a href="#JavaScript基础知识复习" class="headerlink" title="JavaScript基础知识复习"></a>JavaScript基础知识复习</h2><h3 id="JS的组成"><a href="#JS的组成" class="headerlink" title="JS的组成"></a>JS的组成</h3><ul>
+<li>ECMAScript  规定JS语法规范和标准</li>
+<li>DOM   文档对象模型，提供了一套操作dom元素的api</li>
+<li>BOM   浏览器对象模型，提供了一套操作浏览器相关内容的api</li>
+</ul>
+<h3 id="JS中的数据类型"><a href="#JS中的数据类型" class="headerlink" title="JS中的数据类型"></a>JS中的数据类型</h3><h4 id="简单数据类型"><a href="#简单数据类型" class="headerlink" title="简单数据类型"></a>简单数据类型</h4><ul>
+<li>string</li>
+<li>number</li>
+<li>boolean</li>
+<li>undefined</li>
+<li>null<h4 id="复杂数据类型"><a href="#复杂数据类型" class="headerlink" title="复杂数据类型"></a>复杂数据类型</h4></li>
+<li>Object</li>
+<li>function</li>
+<li>Math</li>
+<li>Array</li>
+<li>Date</li>
+<li>RegExp</li>
+<li>String</li>
+<li>Number</li>
+<li>Boolean</li>
+</ul>
+<h4 id="如何获取数据类型"><a href="#如何获取数据类型" class="headerlink" title="如何获取数据类型"></a>如何获取数据类型</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> 数据</span><br><span class="line"><span class="comment">//返回值为string类型的类型名称</span></span><br><span class="line"><span class="comment">//如果是复杂类型的数据，获取到的都是object</span></span><br><span class="line"><span class="comment">//function获取到的是function</span></span><br></pre></td></tr></table></figure>
+<h3 id="值类型和引用类型"><a href="#值类型和引用类型" class="headerlink" title="值类型和引用类型"></a>值类型和引用类型</h3><h4 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h4><p>直接存储的就是数据本身的数据就是值类型的数据</p>
+<h4 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h4><p>存储的是数据的地址，数据单独存储的这种数据，就是引用类型的数据</p>
+<p>tips：不要去找堆和栈了！！！</p>
+<h4 id="值类型和引用类型的赋值特征"><a href="#值类型和引用类型的赋值特征" class="headerlink" title="值类型和引用类型的赋值特征"></a>值类型和引用类型的赋值特征</h4><ul>
+<li>值类型是将存储的值直接复制一份交给新的变量，两个变量值相等，但是互不影响</li>
+<li>引用类型是将数据的地址复制一份交给新的变量，两个变量同时指向同一个对象，修改一个，另一个也会受到影响</li>
+</ul>
+<h3 id="对象的动态特性"><a href="#对象的动态特性" class="headerlink" title="对象的动态特性"></a>对象的动态特性</h3><p>是指在对象创建完成之后，可以随时为对象添加成员的特性</p>
+<ul>
+<li><p>点语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对象名.属性名 = 值</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关联数组语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对象名[<span class="string">"属性名"</span>] = 值</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="in-和-delete"><a href="#in-和-delete" class="headerlink" title="in 和 delete"></a>in 和 delete</h3><h4 id="in"><a href="#in" class="headerlink" title="in"></a>in</h4><ul>
+<li>for-in  遍历对象的键,遍历到的键为字符串类型</li>
+<li>判断对象是否可以访问某个属性 <code>&quot;属性名&quot; in 对象</code></li>
+</ul>
+<h4 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h4><ul>
+<li>删除未使用var声明的变量</li>
+<li>删除对象的属性</li>
+<li>可以删除数组元素（删除元素不影响数组的长度，以及其他元素的索引）</li>
+<li>这个关键字的返回值不可靠</li>
+</ul>
+<h3 id="逻辑中断"><a href="#逻辑中断" class="headerlink" title="逻辑中断"></a>逻辑中断</h3><ul>
+<li>表达式1 || 表达式2   表达式1为真返回表达1，为假返回表达式2</li>
+<li>表达式1 &amp;&amp; 表达式2   表达式1为假返回表达1，为真返回表达式2</li>
+</ul>
+<h3 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h3><ul>
+<li>break 跳出整个循环 继续执行循环下面的代码</li>
+<li>continue 跳出本次虚幻，继续下次循环</li>
+</ul>
+<h2 id="面向对象的基本介绍"><a href="#面向对象的基本介绍" class="headerlink" title="面向对象的基本介绍"></a>面向对象的基本介绍</h2><h3 id="面向对象的概念"><a href="#面向对象的概念" class="headerlink" title="面向对象的概念"></a>面向对象的概念</h3><p>面向对象是一种思维方式，把解决问题的关注点放在了解决问题所需要的一些列的对象上</p>
+<h3 id="面向过程的概念"><a href="#面向过程的概念" class="headerlink" title="面向过程的概念"></a>面向过程的概念</h3><p>面向过程也是一种思维方式，把解决问题的关注点放在了解决问题的每一个详细的步骤上！</p>
+<h3 id="什么是对象"><a href="#什么是对象" class="headerlink" title="什么是对象"></a>什么是对象</h3><p>万物皆对象</p>
+<h3 id="什么是js中的对象"><a href="#什么是js中的对象" class="headerlink" title="什么是js中的对象"></a>什么是js中的对象</h3><p>无序的键值对儿的集合</p>
+<h3 id="面向对象和面向过程的关系"><a href="#面向对象和面向过程的关系" class="headerlink" title="面向对象和面向过程的关系"></a>面向对象和面向过程的关系</h3><p>面向对象其实就是对面向过程的封装！</p>
 
           
         
@@ -441,7 +1744,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -499,18 +1802,6 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
-
-
-
 
         
 
@@ -554,8 +1845,6 @@
   
 
 
-  
-
 
 
 
@@ -594,11 +1883,6 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
