@@ -2465,7 +2465,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,252
+                  1,250
                 </span>
               
 
@@ -2514,7 +2514,7 @@
 <li>number</li>
 <li>boolean</li>
 <li>undefined</li>
-<li>null<h5 id="为什么说null是简单数据类型？"><a href="#为什么说null是简单数据类型？" class="headerlink" title="为什么说null是简单数据类型？"></a>为什么说null是简单数据类型？</h5>实际上，null既可以是简单数据类型，也可以是复杂数据类型<br>说它是简单类型，因为 null == undefined 值为true，说明null的值和undefined的值相等，null的数据存储方式是简单类型数据的存储方式；<br>说它是复杂数据类型，因为用typeof关键字来检测null的数据类型，为object<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span></span><br><span class="line"><span class="comment">// "object"</span></span><br></pre></td></tr></table></figure>
+<li>null<h5 id="为什么说null是简单数据类型？"><a href="#为什么说null是简单数据类型？" class="headerlink" title="为什么说null是简单数据类型？"></a>为什么说null是简单数据类型？</h5>实际上，null既可以是简单数据类型，也可以是复杂数据类型<br>说它是简单类型，因为 null == undefined 值为true，说明null和undefined的值相等，null的数据存储方式是简单类型数据的存储方式；<br>说它是复杂数据类型，因为用typeof关键字来检测null的数据类型，为object<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span></span><br><span class="line"><span class="comment">// "object"</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="复杂数据类型"><a href="#复杂数据类型" class="headerlink" title="复杂数据类型"></a>复杂数据类型</h4><ul>
@@ -2524,8 +2524,8 @@
 <li>Array</li>
 <li>Date</li>
 <li>RegExp</li>
-<li>String</li>
 <li>Number</li>
+<li>String</li>
 <li>Boolean</li>
 </ul>
 <h4 id="如何获取数据类型"><a href="#如何获取数据类型" class="headerlink" title="如何获取数据类型"></a>如何获取数据类型</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> 数据</span><br><span class="line"><span class="comment">//返回值为string类型的类型名称</span></span><br><span class="line"><span class="comment">//如果是复杂类型的数据，获取到的都是object</span></span><br><span class="line"><span class="comment">//function获取到的是function</span></span><br></pre></td></tr></table></figure>
