@@ -243,6 +243,261 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="//toffeeBlock.me/2016/02/14/面向对象编程第二篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="奶糖的博客">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="奶糖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/02/14/面向对象编程第二篇/" itemprop="url">面向对象编程第二篇</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-14T15:28:14+08:00">
+                2016-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,285
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="面向对象编程举例"><a href="#面向对象编程举例" class="headerlink" title="面向对象编程举例"></a>面向对象编程举例</h2><ol>
+<li>面向过程的方式去实现功能  DRY</li>
+<li>使用函数进行了封装</li>
+<li>使用面向对象的方式进行封装</li>
+</ol>
+<h2 id="面向对象的三大特性"><a href="#面向对象的三大特性" class="headerlink" title="面向对象的三大特性"></a>面向对象的三大特性</h2><h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><pre><code>将属性和方法，封装起来，在对象内部实现某些功能，对外界之暴露接口，外界在适用对象的时候，只需要关心接口的使用，而不需要关心对象内部功能的具体实现
+</code></pre><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><pre><code>自己没有的东西，别人有，拿过来使用，就是继承。（拿来主义）
+</code></pre><h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><pre><code>父类指针指向子类对象（JS中不支持多态）
+</code></pre><h2 id="创建对象的三种方式"><a href="#创建对象的三种方式" class="headerlink" title="创建对象的三种方式"></a>创建对象的三种方式</h2><h3 id="字面量方式"><a href="#字面量方式" class="headerlink" title="字面量方式"></a>字面量方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name:<span class="string">""</span>,</span><br><span class="line">    age:<span class="number">18</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>缺陷:复用性差!!</p>
+<h3 id="内置构造函数"><a href="#内置构造函数" class="headerlink" title="内置构造函数"></a>内置构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.name = <span class="string">""</span>;</span><br><span class="line">obj.age = <span class="number">18</span>;</span><br></pre></td></tr></table></figure>
+<p>缺陷:复用性差!!</p>
+<h3 id="自定义构造函数"><a href="#自定义构造函数" class="headerlink" title="自定义构造函数"></a>自定义构造函数</h3><h2 id="自定义构造函数-1"><a href="#自定义构造函数-1" class="headerlink" title="自定义构造函数"></a>自定义构造函数</h2><h3 id="构造函数的概念"><a href="#构造函数的概念" class="headerlink" title="构造函数的概念"></a>构造函数的概念</h3><pre><code>构造函数也是函数，他是用来初始化对象的！
+</code></pre><h3 id="构造函数的特点"><a href="#构造函数的特点" class="headerlink" title="构造函数的特点"></a>构造函数的特点</h3><pre><code>* 首字母大写
+* 一般和new关键字一起使用
+* 不需要手动写返回值
+</code></pre><h3 id="构造函数的执行过程"><a href="#构造函数的执行过程" class="headerlink" title="构造函数的执行过程"></a>构造函数的执行过程</h3><pre><code>1. 使用new关键字创建对象
+2. 调用构造函数
+3. 将构造函数内部的this指向new创建出来的对象
+4. 在构造函数内部使用this为对象新增成员
+5. 返回该对象
+</code></pre><h3 id="构造函数的使用注意事项"><a href="#构造函数的使用注意事项" class="headerlink" title="构造函数的使用注意事项"></a>构造函数的使用注意事项</h3><pre><code>* 返回值：不需要手动写返回值，如果写了
+    * 如果是值类型的，将不会对返回值有任何的影响
+    * 如果是引用类型的，则会将默认返回值进行替换
+* 如果把构造函数当做普通函数调用，this会指向window，返回值如果不写，会是undefined
+</code></pre><h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><h3 id="原型是什么？"><a href="#原型是什么？" class="headerlink" title="原型是什么？"></a>原型是什么？</h3><pre><code>构造函数在创建出来的时候，系统会默认的帮构造函数创建并且关联一个空的对象，这个对象就是原型
+</code></pre><h3 id="原型的作用？"><a href="#原型的作用？" class="headerlink" title="原型的作用？"></a>原型的作用？</h3><pre><code>原型中的成员可以被和其关联的构造函数所创建出来的所有的对象共享！
+</code></pre><h3 id="原型的访问方式"><a href="#原型的访问方式" class="headerlink" title="原型的访问方式"></a>原型的访问方式</h3><ul>
+<li>构造函数.prototype</li>
+<li>对象.<strong>proto</strong>  (不推荐使用，因为非标准，有兼容性问题)</li>
+</ul>
+<h3 id="原型的使用"><a href="#原型的使用" class="headerlink" title="原型的使用"></a>原型的使用</h3><ul>
+<li>利用对象的动态特性，为原型对象新增成员</li>
+<li>直接替换原型对象</li>
+</ul>
+<h3 id="原型的使用注意事项"><a href="#原型的使用注意事项" class="headerlink" title="原型的使用注意事项"></a>原型的使用注意事项</h3><ol>
+<li>一般情况下将方法放在原型中，将属性放在对象中</li>
+<li>当访问对象的属性的时候，会先在对象自身中查找，如果没有会去原型中查找</li>
+<li>当替换原型对象的时候，替换之前所创建的对象和替换之后创建的对象的原型不一致！</li>
+<li>对象的原型就是创建对象那一刻构造函数所关联的那个原型</li>
+<li>设置对象的属性的时候，不会去原型中进行查找，只会在自身设置</li>
+</ol>
+<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>原型中的一个属性，指向和原型相关的构造函数！</p>
+<p>在替换原型对象的时候，这个constructor属性就不准确，所以会手动进行补充</p>
+<h2 id="继承的实现方式"><a href="#继承的实现方式" class="headerlink" title="继承的实现方式"></a>继承的实现方式</h2><h3 id="混入式继承（mix-in）"><a href="#混入式继承（mix-in）" class="headerlink" title="混入式继承（mix-in）"></a>混入式继承（mix-in）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">key</span>: value, <span class="attr">key1</span>:value1&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> obj1)&#123;</span><br><span class="line">    obj[k] = obj1[k];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h3><ul>
+<li>利用混入的方式为原型对象添加成员</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">key</span>: value, <span class="attr">key1</span>:value1&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> obj1)&#123;</span><br><span class="line">    Person.prototype[k] = obj1[k];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>直接替换原型对象</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">key</span>: value, <span class="attr">key1</span>:value1&#125;;</span><br><span class="line"></span><br><span class="line">Person.prototype = obj1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+<h3 id="经典继承"><a href="#经典继承" class="headerlink" title="经典继承"></a>经典继承</h3><p>经典继承的根本，其实还是原型继承！<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>.create(obj1);</span><br><span class="line"><span class="comment">//创建一个对象obj，obj的原型是obj1</span></span><br></pre></td></tr></table></figure></p>
+<p>经典继承的兼容性处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function myCreate(obj)&#123;</span><br><span class="line">    if(Object.create)&#123;</span><br><span class="line">        return Object.create(obj);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        function F()&#123;&#125;</span><br><span class="line">        F.prototype = obj;</span><br><span class="line">        return new F();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><pre><code>在js中，对象都有原型，原型也是对象，所以原型也有原型，那么就形成了链式结构，称作原型链！
+</code></pre><h3 id="属性搜索原则"><a href="#属性搜索原则" class="headerlink" title="属性搜索原则"></a>属性搜索原则</h3><ol>
+<li>在对象访问成员的时候，会现在自身进行查找，如果找到了就直接使用</li>
+<li>如果没有找到，就去对象的原型中进行查找，如果找到了就直接使用</li>
+<li>如果没有找到，就沿着原型链，依次向上查找，直到null</li>
+</ol>
+<h2 id="Object-prototype的成员"><a href="#Object-prototype的成员" class="headerlink" title="Object.prototype的成员"></a>Object.prototype的成员</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>constructor</code></td>
+<td>指向和原型相关的构造函数</td>
+</tr>
+<tr>
+<td><code>hasOwnProperty</code></td>
+<td>判断对象本身是否拥有某个属性</td>
+</tr>
+<tr>
+<td><code>isPrototypeOf</code></td>
+<td>判断对象是不是另外一个对象的原型对象</td>
+</tr>
+<tr>
+<td><code>propertyIsEnumerable</code></td>
+<td>判断属性是否属于对象自身并且可以被遍历</td>
+</tr>
+<tr>
+<td><code>toString</code></td>
+<td>将对象转成字符串</td>
+</tr>
+<tr>
+<td><code>toLocaleString</code></td>
+<td>将对象转成本地格式的字符串</td>
+</tr>
+<tr>
+<td><code>valueOf</code></td>
+<td>当值类型和引用类型参与运算的时候，会调用引用类型的valueOf方法，如果返回值还不能参与运算就去调用toString方法</td>
+</tr>
+<tr>
+<td><code>__proto__</code></td>
+<td>指向对象的原型对象</td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="//toffeeBlock.me/2016/02/11/javascript中的异常处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -696,7 +951,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
